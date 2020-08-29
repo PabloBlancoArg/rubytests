@@ -2,12 +2,11 @@
 # arreglo con la longitud de dichos strings. Ejemplo: dado [‘Ruby’, ‘is’, ‘awesome’] debe
 # retornar [4, 2, 7]
 
-def logitud_de_dichos_strign(ejemplo)
+def logitud_de_dichos_string(ejemplo)
   res = ejemplo.collect { |s| s.length }
 end
 
 ejemplo = ['ruby','is','awesome']
 
-solucion = logitud_de_dichos_strign(ejemplo)
-
+solucion = logitud_de_dichos_string(ejemplo)
 print solucion
