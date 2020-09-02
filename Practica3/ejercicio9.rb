@@ -6,17 +6,18 @@
 #   { red: 128, green: 128, blue: 255 },
 # La representación entera se calcula como: red + green*256 + blue*2562
 
-v = [1, 256, 2562] 
+coeficientes = {red: 256**0, green: 256**1, blue: 256**2} 
 
-h = Hash.new
+color_rgb = Hash.new
 puts "Ingrese cantidad de Rojo"
-h["red"] = gets.chomp.to_i
+color_rgb[:red] = gets.chomp.to_i
 puts "Ingrese cantidad de Green"
-h["green"] = gets.chomp.to_i
+color_rgb[:green] = gets.chomp.to_i
 puts "Ingrese cantidad de Blue"
-h["blue"] = gets.chomp.to_i
+color_rgb[:blue] = gets.chomp.to_i
 
-puts "color en RGB",h
-rgba = ([h["red"]*v[0], h["green"]*v[1], h["blue"]*v[2]]).inject(0){|sum,x| sum + x}
+puts "color en RGB",color_rgb
 
-puts "Representación entera",rgba
+r_entera = (color_rgb[:red] * coeficientes[:red])  + (color_rgb[:green] * coeficientes[:green]) + (color_rgb[:blue] * coeficientes[:blue])
+
+puts "Representación entera",r_entera

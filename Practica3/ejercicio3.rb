@@ -12,9 +12,8 @@ end
 def find_max(minimo,maximo)
 lista_pal = [ ]
 rango = minimo..maximo
-rango.reverse_each do |a|
-	puts a
-  rango.reverse_each do |b|
+rango.each do |a|
+  rango.each do |b|
       multiplicacion = a * b
       if palindromo?(multiplicacion)
         lista_pal.unshift(multiplicacion)
